@@ -2,12 +2,18 @@ import styled from "styled-components"
 import { Icon } from "../icon/Icon"
 import { Theme } from "../../styles/Theme.tsx"
 
-export const Button = ()=> {
+type ButtonPropsType = {
+    children : string;
+}
+
+
+
+export const Button = ({ children }: ButtonPropsType) => {
     return(
-        <>
-        <StyledBtn> <Icon iconId="mail" width="20" height="16" viewBox="0 0 20 20"/> hi@yourname.com</StyledBtn>
+
+        <StyledBtn> <Icon iconId="mail" width="20" height="16" viewBox="0 0 20 20"/>{children}</StyledBtn>
         
-        </>
+
     )
 }
 

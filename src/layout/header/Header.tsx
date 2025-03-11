@@ -4,6 +4,7 @@ import { Menu } from "../../components/menu/Menu"
 import { Container } from "../../components/Container.tsx"
 import {FlexWrapper} from "../../components/FlexWrapper.tsx"
 import {Theme} from "../../styles/Theme.tsx";
+import {MobileMenu} from "../../components/menu/mobileMenu.tsx";
 
 export const Header = ()=> {
     return (
@@ -16,6 +17,7 @@ export const Header = ()=> {
                     <Text>Logo Here</Text>
                    </ContainerLogo>
                 <Menu/>
+                    <MobileMenu/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>

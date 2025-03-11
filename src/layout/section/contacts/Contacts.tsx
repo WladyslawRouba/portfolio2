@@ -13,7 +13,7 @@ export const Contacts = () =>{
                     <SectionTitle>Contact Me</SectionTitle>
                     <Text>If you are looking to hire a product designer,
                         I’m currently available for freelance work</Text>
-                    <Button/>
+                   <Button>hi@yourname.com</Button>
                 </FlexContainer>
 
         </Container>

@@ -52,12 +52,11 @@ const Wrapper = styled.div`
 `
 const Link = styled.a`
     display: inline-block;
-    background: none;
-    border: none;
-padding: 0;
-    margin: 0;
+    
+    transition: 0.4s;
     &:hover {
-        background-color: lightgrey;git 
+        transform: scale(1.5);
+        transition: 0.4s ;
     
  
 `

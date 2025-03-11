@@ -1,4 +1,4 @@
-
+import{Theme} from '../../styles/Theme.tsx';
 import styled from "styled-components"
 export const Menu = ()=> {
     return(
@@ -17,6 +17,9 @@ display: flex;
 gap: 60px;
   
 }
+    @media ${Theme.media.mobile} {
+        display:none
+    }
 `
 const Link = styled.a`
 font-family: 'Manrope', sans-serif;

@@ -38,7 +38,7 @@ position: relative;
         width: 100%;
         height: 100%;
         background: linear-gradient(180deg, rgba(0.1, 0.1, 0.1, 0.1) 0%, #000 100%);
-        transition: all 0.2s ease-in;
+        transition: 0.2s;
     }
     
     

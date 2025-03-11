@@ -18,7 +18,7 @@ export const Main = ()=> {
                             products & interactive experiences.</Text>
                         <Button>hi@yourname.com</Button>
                     </StyledContainer>
-                    <Photo src={photo} alt=""/>
+                    <Photo src={photo} alt="#"/>
                 </BoxFlex>
             </Container>
         </StyledSection>
@@ -32,7 +32,10 @@ const Photo = styled.img`
     border-radius: 50% ;
     margin-top: 130px;
 
-
+@media ${Theme.media.mobile} {
+    width: 240px;
+    height: 240px;
+}
 `
 const Title = styled.h1`
     font-family: 'Manrope', sans-serif;
@@ -42,7 +45,7 @@ const Title = styled.h1`
     line-height: 1.18519;
     letter-spacing: -0.01em;
     padding-bottom: 25px;
-    
+   
     `
 const Text = styled.h1`
     font-family: 'Manrope', sans-serif;
@@ -59,8 +62,7 @@ const Text = styled.h1`
 const StyledSection = styled.section`
     background-color: ${Theme.colors.primary};
     padding-bottom: 160px;
-
-
+    
 `
 const StyledContainer = styled.div`
     max-width: 500px;
@@ -71,6 +73,7 @@ const StyledContainer = styled.div`
 const BoxFlex = styled.div`
 display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 `
 
 
