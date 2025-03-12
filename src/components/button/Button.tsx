@@ -30,5 +30,11 @@ const StyledBtn = styled.button`
     height: 57px;
     color: ${Theme.colors.font};
     &:hover { background-color: darkgrey;}
+    @media (max-width: 931px){
+        margin: 0 auto;
+    }
+    @media ${Theme.media.mobile} {
+       margin: 0 auto;
+    }
 `
 

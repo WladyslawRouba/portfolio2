@@ -51,11 +51,12 @@ align-items: center;
 `
 const BurgerButton = styled.button<{isOpen:boolean}>`
     position: fixed;
-    top: 10px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     width: 20px;
     height: 20px;
     z-index: 13;
+    
 
     span {
         display: block;
@@ -63,6 +64,7 @@ const BurgerButton = styled.button<{isOpen:boolean}>`
         height: 2px;
         background-color: ${Theme.colors.font};
         position: relative;
+       
         ${props =>props.isOpen && `
         background-color: rgba(0, 0, 0, 0 );
         `}
