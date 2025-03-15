@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Font} from "./../../../styles/Common.tsx"
 import Image1 from "../../../assets/images/01.webp"
 import Image2 from "../../../assets/images/02.webp"
 import Image3 from "../../../assets/images/03.webp"
@@ -12,7 +13,6 @@ export const Works = ()=> {
     return(
         <section>
             <Container>
-
                 <Title>Featured Work</Title>
                 <BoxWorks>
                     <Work src={Image1} span={"InVersion"}/>
@@ -40,20 +40,29 @@ const BoxWorks = styled.div`
     &>:nth-child(2n) {
         transform: translateY(100px);
     }
-
+    @media ${Theme.media.mobile} {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+        padding-bottom: 0;
+        &>:nth-child(2n) {
+            transform: translateY(0);
+        }
+    }
 `
 const Title = styled.h2`
+    ${Font({family:" 'Manrope' sans-serif", Fmax: 16, Fmin: 18, weight: 700, lineHeight: 1})}
     padding-left: 40px;
     width: 350px;
     position: relative;
     margin-bottom: 80px;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: ${Theme.colors.font};
+    @media ${Theme.media.mobile}{
+        margin-bottom: 40px;
+    
+}
 
     &::before {
         content: "";
@@ -79,9 +88,5 @@ const Title = styled.h2`
         border-bottom: 2px solid white;
         color: ${Theme.colors.font}
     }
-
-
-    
-   
 
 `

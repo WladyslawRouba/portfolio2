@@ -33,6 +33,12 @@ const CardsGrid= styled.div`
     grid-gap: 25px;
     justify-content: center;
     padding-top: 65px;
+    @media ${Theme.media.mobile}{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 25px;
+        padding-top: 35px;
+    }
     
     
    
@@ -43,5 +49,8 @@ const CardsGrid= styled.div`
 const ContainerGrid = styled.section`
 padding: 240px 0;
     background-color: ${Theme.colors.primary};
+    @media ${Theme.media.mobile} {
+        padding: 115px 0;
+    }
 `
 

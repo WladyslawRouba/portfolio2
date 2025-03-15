@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Font } from "../styles/Common.tsx"
 import {Theme} from "../styles/Theme.tsx"
 
 type WorkPropsType = {
@@ -45,14 +46,12 @@ position: relative;
 `
 
 const StyledSpan = styled.span`
+    ${Font({family:"'Manrope' sans-serif", weight: 700,Fmax: 40, Fmin:30 })}
     opacity: 0;
     position: absolute;
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
     letter-spacing: -0.01em;
     color: ${Theme.colors.font};
 `

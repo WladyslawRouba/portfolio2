@@ -35,6 +35,9 @@ const StyledBtn = styled.button`
     }
     @media ${Theme.media.mobile} {
        margin: 0 auto;
+        width: 250px;
+       
+       
     }
 `
 

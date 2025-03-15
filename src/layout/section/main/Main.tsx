@@ -3,7 +3,9 @@ import  {Button}  from "../../../components/button/Button.tsx"
 import photo from "../../../assets/images/photo.webp"
 import {Theme} from "../../../styles/Theme.tsx"
 import {Container} from "../../../components/Container.tsx"
-import {Font} from "../../../styles/Common.tsx";
+import {Font} from "../../../styles/Common.tsx"
+import Tilt from 'react-parallax-tilt';
+
 
 export const Main = ()=> {
     return(
@@ -19,7 +21,17 @@ export const Main = ()=> {
                             products & interactive experiences.</Text>
                         <Button>hi@yourname.com</Button>
                     </StyledContainer>
-                    <Photo src={photo} alt="#"/>
+                    <Tilt
+                        className="parallax-effect-img"
+                       tiltMaxAngleX={40}
+                        tiltMaxAngleY={40}
+                        perspective={800}
+                       transitionSpeed={1500}
+                        scale={1.1}
+                        gyroscope={true}
+                    >
+                        <Photo src={photo} alt="#"/>
+                    </Tilt>
                 </BoxFlex>
             </Container>
         </StyledSection>
@@ -31,17 +43,16 @@ const Photo = styled.img`
     height: 400px;
     object-fit: cover;
     border-radius: 50% ;
-   
+    @media ${Theme.media.mobile} {
+        width: 240px;
+        height: 240px;
+    }
     @media (max-width: 931px) {
         margin-top: 50px;
     }
         
       
-@media ${Theme.media.mobile} {
-    width: 240px;
-    height: 240px;
-   
-}
+
 `
 const Title = styled.h1`
     ${Font({family: " 'Manrope', sans-serif", weight: 700, Fmax: 54, Fmin: 36, lineHeight: 1.18519  })}
@@ -73,7 +84,10 @@ const Text = styled.p`
 
 const StyledSection = styled.section`
     background-color: ${Theme.colors.primary};
-    padding-bottom: 160px;
+    padding-bottom: 140px;
+    @media ${Theme.media.mobile}{
+        padding-bottom: 125px;
+    }
     
 `
 const StyledContainer = styled.div`
@@ -100,12 +114,6 @@ display: flex;
         align-items: center;
     }  
     
-    @media ${Theme.media.tablet} {
-        margin-top: 50px;
-       
-        
-        
-    }
 `
 
 

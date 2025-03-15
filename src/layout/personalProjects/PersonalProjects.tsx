@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Theme} from '../../styles/Theme.tsx'
 import {SectionTitle} from '../../components/SectionTitle.tsx'
 import {PersonalCard} from "./PersonalCard.tsx";
 import photo1 from "../../assets/images/Rectangle-1.webp";
@@ -28,13 +29,16 @@ const GridPhoto = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     justify-items: center;
-    padding-top: 66px;
+    padding-top: 65px;
     padding-bottom: 240px;
-  
+  @media ${Theme.media.mobile} {
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      padding-bottom: 150px;
+      padding-top: 35px;
+      
+  }
     
     
-
-
-
-
+    
 `

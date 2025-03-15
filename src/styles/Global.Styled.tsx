@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
     button {
-      background-color: unset;
+      background-color: unset;  
         border: none;
         }
     
