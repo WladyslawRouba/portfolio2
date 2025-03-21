@@ -1,0 +1,17 @@
+.alice-carousel__dots-item:not(.__custom):hover,
+.alice-carousel__dots-item:not(.__custom).__active{
+    background-color: #959595;
+
+
+}
+.alice-carousel__dots-item:not(.__custom).__active{
+    width: 20px;
+}
+.alice-carousel__prev-btn, .alice-carousel__next-btn {
+   display: none;
+}
+.alice-carousel__dots-item:not(.__custom){
+    width: 15px;
+
+height: 10px;
+}

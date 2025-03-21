@@ -145,7 +145,7 @@ const StyledBtn = styled.a`
         
     }
    @media (max-width: 931px) {
-       left: 80%;
+       //left: 50%;
      
     }
 
@@ -176,7 +176,7 @@ const StyledBtn = styled.a`
         
     }
         @media (max-width: 931px) {
-            left: 20%;
+            left: -5%;
 
             &::before, &::after {
                 left: 10px;
