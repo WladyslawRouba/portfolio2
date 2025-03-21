@@ -14,7 +14,7 @@ export const Header = ()=> {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                    <ContainerLogo>
                     <Logo/>
-                    <Text>Logo Here</Text>
+                    <Text></Text>
                    </ContainerLogo>
                 <Menu/>
                     <MobileMenu/>
@@ -27,6 +27,7 @@ export const Header = ()=> {
 }
 
 const StyledHeader = styled.header`
+    position: relative;
     background-color: #323232;
     color: ${Theme.colors.font};
     

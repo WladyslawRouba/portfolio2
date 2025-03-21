@@ -6,24 +6,29 @@ import photo1 from "../../assets/images/Rectangle-1.webp";
 import photo2 from "../../assets/images/Rectangle-2.webp";
 import photo3 from "../../assets/images/Rectangle-3-.webp";
 import {Container} from "../../components/Container.tsx"
+import { Fade } from "react-awesome-reveal";
 
 export const Projects = () => {
     return(
-        <section>
+        <StyledSection>
             <Container>
             <SectionTitle>Personal Projects</SectionTitle>
             <GridPhoto>
-            <PersonalCard photo = {photo1}/>
-            <PersonalCard photo = {photo2}/>
-            <PersonalCard photo = {photo3}/>
+                <Fade duration={1000} delay={1000}>
+                    <PersonalCard photo = {photo1}/>
+                    <PersonalCard photo = {photo2}/>
+                    <PersonalCard photo = {photo3}/>
+                </Fade>
             </GridPhoto>
             </Container>
 
-        </section>
+        </StyledSection>
 
 
     )
 }
+const StyledSection = styled.section`
+position: relative;`
 const GridPhoto = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);

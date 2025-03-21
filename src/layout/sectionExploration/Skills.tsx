@@ -1,27 +1,26 @@
 import {SectionTitle} from '../../components/SectionTitle.tsx';
 import styled from "styled-components";
-import {Card} from './Card.tsx';
-import photo1 from '../../assets/images/tinified-3/001.webp';
-import photo2 from '../../assets/images/tinified-3/002.webp';
-import photo3 from '../../assets/images/tinified-3/003.webp';
-import photo4 from '../../assets/images/tinified-3/004.webp';
-import photo5 from '../../assets/images/tinified-3/005.webp';
-import photo6 from '../../assets/images/tinified-3/006.webp';
+import {Skill} from './Skill.tsx';
+
 import {Theme} from "../../styles/Theme.tsx";
 import {Container} from "../../components/Container.tsx";
+import { Fade } from "react-awesome-reveal";
 
-export const Section= () => {
+export const Skills= () => {
     return (
         <ContainerGrid>
             <Container>
-           < SectionTitle>Visual Explorations</SectionTitle>
+           < SectionTitle>My Skills</SectionTitle>
             <CardsGrid>
-                <Card img = {photo1}/>
-                <Card img = {photo2}/>
-                <Card img = {photo3}/>
-                <Card img = {photo4}/>
-                <Card img = {photo5}/>
-                <Card img = {photo6}/>
+                <Fade cascade={true} damping={0.1}>
+                    <Skill skillId = "git" title={"Git"}/> ;
+                    <Skill skillId = "js" title={"JS"}/>;
+                    <Skill skillId = "react" title={"React"}/>;
+                    <Skill skillId = "styled" title={"Styled-components"}/>;
+                    <Skill skillId = "redux" title={"Redux"}/>;
+                    <Skill skillId = "ts" title={"Typescript"}/>;
+
+                </Fade>
             </CardsGrid>
             </Container>
         </ContainerGrid>
@@ -30,23 +29,20 @@ export const Section= () => {
 const CardsGrid= styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    grid-gap: 60px;
     justify-content: center;
     padding-top: 65px;
     @media ${Theme.media.mobile}{
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        gap: 25px;
+        gap: 40px;
         padding-top: 35px;
     }
-    
-    
-   
-   
     
  
     `
 const ContainerGrid = styled.section`
+    position: relative;
 padding: 240px 0;
     background-color: ${Theme.colors.primary};
     @media ${Theme.media.mobile} {

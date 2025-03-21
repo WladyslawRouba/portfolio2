@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { Theme } from './Theme.tsx';
 export const GlobalStyle = createGlobalStyle`
     body {
+        overflow-x: hidden;
+        width: 100%;
+        scroll-behavior: smooth;
         *,
         *::before,
         *::after {
@@ -16,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        
+      
        
     }
     a {
@@ -35,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     
     section {
         background-color: ${Theme.colors.primary};
+        
     }
 
 `

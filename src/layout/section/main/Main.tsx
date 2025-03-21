@@ -6,20 +6,26 @@ import {Container} from "../../../components/Container.tsx"
 import {Font} from "../../../styles/Common.tsx"
 import Tilt from 'react-parallax-tilt';
 
-
 export const Main = ()=> {
+    const handleClick = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+    };
+
+
     return(
-        <StyledSection>
+        <StyledSection id="home">
             <Container>
                 <BoxFlex>
                     <StyledContainer>
-                        <Title>Hi, I am Your Name
-                            A Product Designer
-                            based in City.</Title>
+                        <Title>
+                            Hi, I am Wladyslaw Rouba A frontend developer based in Spain.
+                        </Title>
                         <Text>I help businesses and companies reach
                             their goals by designing user-centric digital
                             products & interactive experiences.</Text>
-                        <Button>hi@yourname.com</Button>
+                        <Button> <a onClick={() => handleClick("contact")}>Contact</a></Button>
+                        <StyledBtn onClick={() => handleClick("work")}>Featured Work</StyledBtn>
                     </StyledContainer>
                     <Tilt
                         className="parallax-effect-img"
@@ -33,6 +39,7 @@ export const Main = ()=> {
                         <Photo src={photo} alt="#"/>
                     </Tilt>
                 </BoxFlex>
+
             </Container>
         </StyledSection>
     )
@@ -50,9 +57,7 @@ const Photo = styled.img`
     @media (max-width: 931px) {
         margin-top: 50px;
     }
-        
-      
-
+    
 `
 const Title = styled.h1`
     ${Font({family: " 'Manrope', sans-serif", weight: 700, Fmax: 54, Fmin: 36, lineHeight: 1.18519  })}
@@ -82,11 +87,17 @@ const Text = styled.p`
     }
     `
 
+
+
 const StyledSection = styled.section`
+    min-height: auto;
     background-color: ${Theme.colors.primary};
-    padding-bottom: 140px;
+    padding-bottom: 100px;
+    @media (max-width: 931px){
+        padding-bottom: 50px;
+    }
     @media ${Theme.media.mobile}{
-        padding-bottom: 125px;
+        padding-bottom: 10px;
     }
     
 `
@@ -94,12 +105,14 @@ const StyledContainer = styled.div`
     max-width: 500px;
     width: 100%;
     padding-top: 160px;
+   
     @media (max-width: 931px){
-        text-align: center;
+      text-align: center;
         padding-top: 80px;
     }
     @media ${Theme.media.mobile}{
         padding-top: 65px;
+       
     }
     
 `
@@ -114,6 +127,67 @@ display: flex;
         align-items: center;
     }  
     
+`
+const StyledBtn = styled.a`
+    display: inline-block;
+    ${Font({family:" 'Manrope' sans-serif", Fmax: 18, Fmin: 16, weight: 700, lineHeight: 1})}
+    width: 230px;
+    position: relative;
+   left: 11%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: ${Theme.colors.font};
+    &:hover {
+        cursor: pointer;
+        color: ${Theme.colors.secondary};
+        
+    }
+   @media (max-width: 931px) {
+       left: 80%;
+     
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -25px; 
+        left: -50px;
+        transform: translate(-50%, 50%);
+        width: 2px;
+        height: 30px;
+        background-color: white;
+        color: ${Theme.colors.font};
+        
+        }
+    &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -50px;
+        transform: translate(-50%, 220%) rotate(45deg);
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        color: ${Theme.colors.font};
+        
+        
+    }
+        @media (max-width: 931px) {
+            left: 20%;
+
+            &::before, &::after {
+                left: 10px;
+            }
+        }
+    @media ${Theme.media.mobile}{
+        &::before, &::after {
+            left: 10px;
+        }
+    }
+
 `
 
 

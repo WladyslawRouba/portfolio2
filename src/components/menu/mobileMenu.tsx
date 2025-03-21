@@ -1,16 +1,22 @@
 import{Theme} from '../../styles/Theme.tsx';
+import { useState } from "react"
 import styled from "styled-components"
 export const MobileMenu = ()=> {
+    const [menuIsOpen, setMenuIsOpen] = useState(false)
+    const onBurgerBtnClick = () => { setMenuIsOpen( !menuIsOpen)}
+    const scrollToSection = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    };
     return(
         <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick} >
                 <span></span>
             </BurgerButton>
-            <MobileMenuPopup isOpen={false}>
+            <MobileMenuPopup isOpen={menuIsOpen} onClick ={()=> { setMenuIsOpen(false)}} >
                 <ul>
-                    <li><Link href="#">Home</Link></li>
-                    <li><Link href="#">Work</Link></li>
-                    <li><Link href="#">Contact</Link></li>
+                    <li><Link onClick={() => scrollToSection("home")}>Home</Link></li>
+                    <li><Link onClick={() => scrollToSection("work")}>Work</Link></li>
+                    <li><Link onClick={() => scrollToSection("contact")}>Contact</Link></li>
                 </ul>
             </MobileMenuPopup>
 
@@ -51,6 +57,7 @@ align-items: center;
 `
 const BurgerButton = styled.button<{isOpen:boolean}>`
     position: fixed;
+
     top: 30px;
     right: 30px;
     width: 20px;
@@ -106,6 +113,7 @@ transform: rotate(45deg) translateY(0);
 
 
 const Link = styled.a`
+    cursor: pointer;
 font-family: 'Manrope', sans-serif;
     padding: 25px 0;
     font-size: 18px;
@@ -114,6 +122,8 @@ font-family: 'Manrope', sans-serif;
     &:hover { color : darkgrey;}
     
 `
+
+
 
 // background-color: ${({isOpen}) => (isOpen ? 'rgba(0, 0, 0, 0)': Theme.colors.primary)};
 // transform: ${({isOpen}) => (isOpen ? 'rotate(-45deg) translateY(0)' : 'translateY(-10px)')};

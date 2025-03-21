@@ -9,7 +9,7 @@ export const Footer = () =>{
         <StyledContainer>
             <Container>
             <FlexWrapper>
-                <p>Made by Your Name — Copyright 2021</p>
+                <Text>Made by <Name>Wladyslaw Rouba</Name> — Copyright 2021</Text>
                 <Wrapper>
                     <Link>
                         <SocialIcon socialId ="whatsApp"  />
@@ -43,7 +43,7 @@ const StyledContainer = styled.div`
         content: "";
         position: absolute;
         display: block;
-       width: 100%;
+       min-width: 100%;
         height: 1px;
         background-color: ${Theme.colors.secondary};
         //margin: -50px 0;
@@ -82,6 +82,7 @@ const Wrapper = styled.div`
 `
 const Link = styled.a`
     display: inline-block;
+    cursor: pointer;
     
     transition: 0.4s;
     &:hover {
@@ -89,5 +90,12 @@ const Link = styled.a`
         transition: 0.4s ;
     
  
+`
+const Text = styled.p`
+color: ${Theme.colors.secondary};
+`
+const Name = styled.span`
+    color: ${Theme.colors.font};
+
 `
 
